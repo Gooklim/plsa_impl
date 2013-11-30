@@ -10,6 +10,7 @@ def normalize(vec):
   s = sum(vec)
   for i in range(len(vec)):
     vec[i] = vec[i] * 1.0 / s
+
   
 def llhood(t_d, p_z, p_w_z, p_d_z):
   V,D = t_d.shape

@@ -16,7 +16,8 @@ def llhood(t_d, p_z, p_w_z, p_d_z):
   ret = 0.0
   for w,d in zip(*t_d.nonzero()):
     p_d_w = np.sum(p_z * p_w_z[w,:] * p_d_z[d,:])
-    if p_d_w > 0 : ret += t_d[w,d] * np.log(p_d_w)
+    if p_d_w > 0 : 
+      ret += t_d[w][d] * np.log(p_d_w)
   return ret
 
 
@@ -69,14 +70,15 @@ class pLSA :
         normalize(p_z_d_w)
         
         #print '[ EM ] >>>>>>>>>> M step : '
+        tt = t_d[w_idx,d_idx] * p_z_d_w
         # w | z
-        p_w_z[w_idx, :] += t_d[w_idx,d_idx] * p_z_d_w
+        p_w_z[w_idx, :] += tt
 
         # d | z
-        p_d_z[d_idx, :] += t_d[w_idx,d_idx] * p_z_d_w
+        p_d_z[d_idx, :] += tt
   
         # z
-        p_z += t_d[w_idx, d_idx] * p_z_d_w
+        p_z += tt
 
       normalize(p_w_z)
       normalize(p_d_z)

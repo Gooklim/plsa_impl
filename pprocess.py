@@ -41,7 +41,7 @@ class Pprocess:
     return self.t_d
 
   def get_word(self, wid):
-    return self.id2w(wid)
+    return self.id2w[wid]
 
 if __name__ == '__main__':
   fname = './data.txt'
@@ -49,9 +49,9 @@ if __name__ == '__main__':
 
   pp = Pprocess(fname, fsw)
   t_d =  pp.get_t_d()
-  for w,d in zip(*t_d.nonzero()) :
-    if t_d[w][d] != 1 :
-      print w,d,t_d[w][d]
+#  for w,d in zip(*t_d.nonzero()) :
+#    if t_d[w][d] != 1 :
+#      print w,d,t_d[w][d]
 
 
 

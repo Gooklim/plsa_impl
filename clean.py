@@ -3,10 +3,10 @@ import json
 import pprint
 import time
 
-LOG_FILE='log'
+LOG_FILE='plsa.log'
 KEY_WORD_SIZE = 10
 
-OUT_FILE='clean.dat'
+OUT_FILE='result.dat'
 
 res = {}
 
@@ -48,7 +48,9 @@ def process_log():
       if line[10:13] == 'z =' :
         clean_z(f, line)
 
-
+  
+  with open('result_verbose.dat', 'w') as f:
+    pprint.pprint(res, f)
 
 
 if __name__ == '__main__' :

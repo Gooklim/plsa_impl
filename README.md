@@ -138,4 +138,87 @@
 #### Run ####
 `python main.py`
 
+### Final average log likelihood and time cost of different topics K ###
+对某个特定topic个数z，每次计算的时间比较长，所以在这里，只计算了`z in range(3,323, 10)` 范围内的数据。
+如下：
+
+z 表示topic的个数， llhood 表示log likelihood的值， cost表示计算所消耗的时间(s)
+
+    z = 3 llhood = -973782.206921 cost = 747.666631
+    z = 13 llhood = -922296.631344 cost = 953.463684
+    z = 23 llhood = -894730.609518 cost = 1101.267654
+    z = 33 llhood = -877589.227764 cost = 985.553553
+    z = 43 llhood = -863563.797595 cost = 1024.922029
+    z = 53 llhood = -852814.244978 cost = 1165.518772
+    z = 63 llhood = -844012.122190 cost = 1141.052079
+    z = 73 llhood = -836411.524585 cost = 1259.596428
+    z = 83 llhood = -829528.584949 cost = 1341.569783
+    z = 93 llhood = -823315.078888 cost = 1262.947609
+    z = 103 llhood = -818415.021816 cost = 1512.228595
+    z = 113 llhood = -813328.036424 cost = 1516.568643
+    z = 123 llhood = -808700.478114 cost = 1663.149710
+    z = 133 llhood = -804943.965458 cost = 1667.525403
+    z = 143 llhood = -801118.183437 cost = 1751.649206
+    z = 153 llhood = -796742.117443 cost = 1828.503664
+    z = 163 llhood = -794702.480238 cost = 1858.348440
+    z = 173 llhood = -790803.721784 cost = 2147.987550
+    z = 183 llhood = -787822.730953 cost = 2038.396444
+    z = 193 llhood = -784891.046263 cost = 1886.757959
+    z = 203 llhood = -782920.879800 cost = 2199.012683
+    z = 213 llhood = -780215.572185 cost = 2214.484940
+    z = 223 llhood = -777977.077787 cost = 2264.572652
+    z = 233 llhood = -776055.981161 cost = 2533.987723
+    z = 243 llhood = -773836.837297 cost = 2415.084260
+    z = 253 llhood = -772268.738924 cost = 2732.307158
+    z = 263 llhood = -769585.005643 cost = 2530.018818
+    z = 273 llhood = -767708.159138 cost = 2896.458289
+    z = 283 llhood = -765369.237016 cost = 2754.486797
+    z = 293 llhood = -763773.227083 cost = 3025.004390
+    z = 303 llhood = -762708.746233 cost = 2787.175699
+    z = 313 llhood = -761130.710307 cost = 3200.206291
+    z = 323 llhood = -759153.088053 cost = 3018.660368
+
+### Explain Topics in sides 12 ###
+最后的数据见 result_verbose.dat
+
+说明：
+z : 表示topic个数为z时候的情况
+cost :  表示计算所消耗的时间
+llhod : log likelihood
+topic : 一个数组，包含z个元素，每个元素是一个map，map的key是关键字，map的value是概率P(w|z)
+
+如下数据是在z = 3时候的数据
+    {3: {'cost': 747.666631,
+         'llhood': -973782.206921,
+         'topic': [[{'web': 0.045116},
+                    {'information': 0.030074},
+                    {'data': 0.029755},
+                    {'semantic': 0.024606},
+                    {'learning': 0.024484},
+                    {'classification': 0.017352},
+                    {'extraction': 0.012948},
+                    {'planning': 0.012565},
+                    {'text': 0.012329},
+                    {'mining': 0.012174}],
+                   [{'learning': 0.036771},
+                    {'knowledge': 0.022713},
+                    {'support': 0.014663},
+                    {'models': 0.013992},
+                    {'logic': 0.013513},
+                    {'planning': 0.011569},
+                    {'language': 0.011069},
+                    {'vector': 0.010015},
+                    {'probabilistic': 0.009392},
+                    {'machine': 0.008913}],
+                   [{'systems': 0.025266},
+                    {'agents': 0.020213},
+                    {'based': 0.017661},
+                    {'model': 0.017511},
+                    {'agent': 0.016911},
+                    {'multi-agent': 0.012958},
+                    {'framework': 0.011407},
+                    {'analysis': 0.009565},
+                    {'system': 0.008853},
+                    {'design': 0.008751}]],
+         'z': 3}}
 
